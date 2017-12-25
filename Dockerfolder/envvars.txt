@@ -1,0 +1,23 @@
+COMPOSER_CARD=admin@kibaati-ledger
+COMPOSER_NAMESPACES=never
+COMPOSER_AUTHENTICATION=false
+COMPOSER_MULTIUSER=true
+COMPOSER_PROVIDERS='{
+    "github": {
+        "provider": "github",
+        "module": "passport-github",
+        "clientID": "50905f74ab3408b839d4",
+        "clientSecret": "946fa7164d231ffb394e60c209b9963a801d0909",
+        "authPath": "/auth/github",
+        "callbackURL": "/auth/github/callback",
+        "successRedirect": "/",
+        "failureRedirect": "/"
+    }
+}'
+COMPOSER_DATASOURCES='{
+    "db": {
+        "name": "db",
+        "connector": "mongodb",
+        "host": "mongo"
+    }
+}'

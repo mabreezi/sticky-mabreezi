@@ -1,0 +1,29 @@
+/**
+ * My commodity trading network
+ */
+namespace org.kibaati
+asset Item identified by itemId {
+    o String itemName 
+    o String itemId
+    o String description
+    o String mainExchange
+    o Double quantity
+    --> Person owner
+}
+participant Person identified by personId {
+    o String personId
+    o String firstName
+    o String lastName
+    o String role
+    o Double balance
+}
+transaction Trade {
+    --> Item item
+    --> Person newOwner
+}
+
+transaction Payment {
+	o Double amount
+	--> Person sender
+	--> Person recipient
+}

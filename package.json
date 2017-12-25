@@ -1,0 +1,22 @@
+{
+  "name": "kibaati-ledger",
+  "version": "0.0.1",
+  "description": "Kibaati&#39;s Ledger",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "Kibaati",
+  "email": "kibaat@kibaati.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "latest",
+    "composer-client": "latest",
+    "composer-common": "latest",
+    "composer-connector-embedded": "latest",
+    "chai": "latest",
+    "eslint": "latest",
+    "istanbul": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  }
+}
