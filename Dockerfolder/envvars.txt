@@ -1,7 +1,7 @@
 COMPOSER_CARD=admin@kibaati-ledger
 COMPOSER_NAMESPACES=never
 COMPOSER_AUTHENTICATION=true
-COMPOSER_MULTIUSER=true
+COMPOSER_MULTIUSER=false
 COMPOSER_PROVIDERS='{
     "github": {
         "provider": "github",

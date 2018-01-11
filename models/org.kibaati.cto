@@ -6,7 +6,6 @@ asset Item identified by itemId {
     o String itemName 
     o String itemId
     o String description
-    o String mainExchange
     o Double quantity
     --> Person owner
 }
@@ -18,6 +17,7 @@ participant Person identified by personId {
     o Double balance
 }
 transaction Trade {
+    o String previousOwner
     --> Item item
     --> Person newOwner
 }
