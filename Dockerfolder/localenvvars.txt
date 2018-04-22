@@ -10,7 +10,7 @@ COMPOSER_PROVIDERS='{
         "clientSecret": "1f985dba9636dae4891624080d2dc32b10fb4fc5",
         "authPath": "/auth/github",
         "callbackURL": "/auth/github/callback",
-        "successRedirect":"/",
+        "successRedirect":"http://52.226.129.193/sender/session-create/",
         "failureRedirect": "/"
     }
 }'

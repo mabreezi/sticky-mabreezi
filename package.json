@@ -1,12 +1,12 @@
 {
-  "name": "kibaati-ledger",
+  "name": "mabreezi",
   "version": "0.0.1",
-  "description": "Kibaati&#39;s Ledger",
+  "description": "Mabreezi ledger",
   "scripts": {
     "test": "mocha --recursive"
   },
-  "author": "Kibaati",
-  "email": "kibaat@kibaati.com",
+  "author": "Musisi Brian",
+  "email": "brianmusisi@yahoo.co.uk",
   "license": "Apache-2.0",
   "devDependencies": {
     "composer-admin": "latest",

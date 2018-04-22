@@ -88,7 +88,7 @@ describe('#' + namespace, () => {
             const factory = businessNetworkConnection.getBusinessNetwork().getFactory();
 
             // Create a user participant
-            const user = factory.newResource(namespace, 'User', 'Kibaati');
+            const user = factory.newResource(namespace, 'User', 'Musisi Brian');
 
             // Create the asset
             const asset = factory.newResource(namespace, assetType, 'ASSET_001');

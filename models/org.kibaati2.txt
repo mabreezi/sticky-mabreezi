@@ -1,4 +1,3 @@
-
 /**
  * My commodity trading network
  */
@@ -15,7 +14,7 @@ asset Item identified by itemId {
     o Double quantity
     --> Person owner optional
     --> Organization organization optional
-    --> Shipment shipment optional
+    --> Shipment shipment
 }
 
 /** A shipment that contain
@@ -23,10 +22,11 @@ multiple items of different types */
 asset Shipment identified by shipmentId{
     o String shipmentId
     o String [] itemList
+    o Integer [] itemAmounts
     o String location
     o String [] locationReadings
     o String destination
-    --> Organization organization optional
+    --> Organization organization
 
 }
 
@@ -46,38 +46,34 @@ abstract participant Person identified by personId {
 /*** Defintion of a refugee ***/
 participant Refugee extends Person {
   o String refugeeId
-  o Integer phoneNumber optional
+  o Integer phoneNumber
   o Integer age
   o Integer zone
   o Integer village
   o String alternate optional
-  --> Family family optional 
+  --> Family family
 }
 
 /*** Definition of a Merchant ***/
-participant Merchant extends Person{
+participant Merchant extends Person {
   o String merchantId
   o Integer zone
   o String email optional
-  o Integer phoneNumber
-  o Integer accountNumber
-  // o String personId
-  // o String firstName
-  // o String lastName
-  // o Double balance optional
+  o String phoneNumber
+  o String accountNumber
 }
 
 /*** A user from the implemeting partner ****/
 participant PartnerUser extends Person {
   o String email
-  o Integer phoneNumber
-  --> Organization organization optional
+  o String phoneNumber
+  --> Organization organization
 }
 
 
 participant Trucker extends Person{
-  o String truckId optional
-  o Integer phoneNumber
+  o String truckId
+  --> Shipment shipmentId
 }
 
 
@@ -105,40 +101,23 @@ participant Family identified by familyId {
 
 /*** Trade that transfers an item between
 two people***/
-transaction ItemTransfer {
+transaction Trade {
+    o String previousOwner
     --> Item item
     --> Person newOwner
 }
 
-transaction AdminItemTransfer {
-    --> Person previousOwner
-    --> Item item
-    --> Person newOwner
-}
-
-/* Payment that moves funds from the initiator to the specified recipient */
-transaction OrdinaryPayment {
+/* Payment that moves cash between two people */
+transaction Payment {
 	o Double amount
+	--> Person sender
 	--> Person recipient
-}
-
-/*Payment when a refugee is getting funds from a merchant. Funds move from refugee to Merchant*/
-transaction RefugeeMerchantPayment{
-        o Double amount
-        --> Person refugee
-}
-
-/* Payment that moves cash between two people used by the ADMIN only*/
-transaction AdminCrossPayment{
-        o Double amount
-        --> Person sender
-        --> Person recipient
 }
 
 /*** Used to update the location of a shipment */
 transaction LocationUpdate {
   o String location
-  --> Shipment shipment
+  o Shipment shipment
 }
 
 

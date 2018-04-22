@@ -6,11 +6,11 @@ COMPOSER_PROVIDERS='{
     "github": {
         "provider": "github",
         "module": "passport-github",
-        "clientID": "7573f3e81ee1898db4f5",
-        "clientSecret": "1f985dba9636dae4891624080d2dc32b10fb4fc5",
+        "clientID":"ec83bb7539a945c972fd",
+        "clientSecret": "58675ad2ad0f0a564bae566124023d155e4a2714",
         "authPath": "/auth/github",
         "callbackURL": "/auth/github/callback",
-        "successRedirect":"/",
+        "successRedirect":"http://app.brianmusisi.com",
         "failureRedirect": "/"
     }
 }'
